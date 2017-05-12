@@ -58,3 +58,6 @@ And then use it like any other relation:
 ```php
 $record = Record::with('group')->first();
 ```
+
+### Testing
+```./vendor/bin/phpunit```
