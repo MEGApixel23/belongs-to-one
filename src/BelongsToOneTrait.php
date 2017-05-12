@@ -10,7 +10,18 @@ trait BelongsToOneTrait
         // name of the calling function. We will use that function name as the
         // title of this relation since that is a great convention to apply.
         if (is_null($relation)) {
-            $relation = $this->getBelongsToManyCaller();
+            $getBelongsToManyRelationMethods = [
+                'guessBelongsToManyRelation', 'getBelongsToManyCaller'
+            ];
+
+            for ($i = 0; $i < count($getBelongsToManyRelationMethods); $i++) {
+                if (method_exists($this, $getBelongsToManyRelationMethods[$i])) {
+                    $relation = $getBelongsToManyRelationMethods[$i];
+                    break;
+                }
+            }
+
+            $relation = $this->$relation();
         }
 
         // First, we'll need to determine the foreign key and "other key" for the

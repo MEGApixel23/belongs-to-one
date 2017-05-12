@@ -43,7 +43,7 @@ class BelongsToOneTest extends TestCase
         $this->instance(
             \Models\Group::class,
             $record->group,
-            'related model is type of Model rather than Collection'
+            'related model is type o'
         );
     }
 }

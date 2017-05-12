@@ -2,17 +2,14 @@
 
 namespace Models;
 
-use Illuminate\Database\Eloquent\Model;
-use Megapixel23\Database\Eloquent\Relations\BelongsToOneTrait;
+use Megapixel23\Database\Eloquent\Relations\BaseModel;
 
 /**
  * @property int $id
  * @property Group $group
  */
-class Record extends Model
+class Record extends BaseModel
 {
-    use BelongsToOneTrait;
-
     public function group()
     {
         return $this->belongsToOne(Group::class);
