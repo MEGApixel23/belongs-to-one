@@ -16,12 +16,20 @@
     	"laravel/framework": "5.3.*"
     },
     "require-dev": {
-        "phpunit/phpunit": "^5.6"
+        "phpunit/phpunit": "^5.6",
+        "orchestra/testbench": "~3.0"
     },
 
     "autoload": {
         "psr-4": {
-            "Megapixel23\\Database\\Eloquent\\Relations\\": "src"
+            "Megapixel23\\Database\\Eloquent\\Relations\\": "src",
+            "Models\\": "tests/Models"
         }
+    },
+
+    "autoload-dev": {
+        "classmap": [
+            "tests/TestCase.php"
+        ]
     }
 }
