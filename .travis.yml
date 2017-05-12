@@ -5,9 +5,18 @@ php:
   - 7.0
   - 7.1
 
+cache:
+  directories:
+    - $HOME/.composer
+
+env:
+  - LARAVEL_VERSION=5.3.*
+  - LARAVEL_VERSION=5.4.*
+
 before_script:
   - composer self-update
-  - composer install --no-interaction
+  - if [ "LARAVEL_VERSION" != "" ]; then composer require "laravel/framework:${LARAVEL_VERSION}" --no-update; fi;
+  - composer update
 
 script:
   - vendor/bin/phpunit
