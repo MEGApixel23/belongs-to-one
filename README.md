@@ -1,6 +1,8 @@
 Belongs To One Relation for Laravel 5
 =====================================
 
+![Travis CI](https://travis-ci.org/MEGApixel23/belongs-to-one.svg?branch=master)
+
 Based on [Belongs To Many](https://laravel.com/docs/5.3/eloquent-relationships#defining-relationships) Relation. Returns one model instead of Collection of models.
 
 ### Installation
