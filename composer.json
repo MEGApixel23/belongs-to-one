@@ -22,12 +22,14 @@
 
     "autoload": {
         "psr-4": {
-            "Megapixel23\\Database\\Eloquent\\Relations\\": "src",
-            "Models\\": "tests/Models"
+            "Megapixel23\\Database\\Eloquent\\Relations\\": "src"
         }
     },
 
     "autoload-dev": {
+        "psr-4": {
+            "Models\\": "tests/Models"
+        },
         "classmap": [
             "tests/TestCase.php"
         ]
