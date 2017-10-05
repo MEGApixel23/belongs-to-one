@@ -1,8 +1,8 @@
 {
     "name": "megapixel23/belongs-to-one",
     "keywords": [
-    	"laravel", "laravel-5", "ORM",
-    	"relation", "database"
+        "laravel", "laravel-5", "ORM",
+        "relation", "database"
     ],
     "description": "Belongs To One Laravel 5 Relation class",
     "license": "MIT",
@@ -19,13 +19,11 @@
         "phpunit/phpunit": "^6.0",
         "orchestra/testbench": "~3.0"
     },
-
     "autoload": {
         "psr-4": {
             "Megapixel23\\Database\\Eloquent\\Relations\\": "src"
         }
     },
-
     "autoload-dev": {
         "psr-4": {
             "Models\\": "tests/Models"
