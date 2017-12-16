@@ -1,6 +1,7 @@
 <?php
 
 use Models\Record;
+use Models\Group;
 use Models\GroupRecord;
 
 class BelongsToOneTest extends TestCase
@@ -40,10 +41,9 @@ class BelongsToOneTest extends TestCase
          */
         $record = Record::with('group')->first();
 
-        $this->instance(
-            \Models\Group::class,
-            $record->group,
-            'related model is type o'
+        $this->assertInstanceOf(
+            Group::class,
+            $record->group
         );
     }
 }

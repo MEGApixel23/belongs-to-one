@@ -25,11 +25,7 @@ class BelongsToOne extends BelongsToMany
         // the parent models. Then we will return the hydrated models back out.
         foreach ($models as $model) {
             if (isset($dictionary[$key = $model->getKey()])) {
-                $collection = $this->related->newCollection($dictionary[$key]);
-                $model->setRelation(
-                    $relation, 
-                    $collection instanceof Collection ? $collection->first() : $collection
-                );
+                $model->setRelation($relation, reset($dictionary[$key]) ?: null);
             }
         }
 
